@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:latest
+    container_name: store-management-db
+    environment:
+      POSTGRES_USER: storeadmin
+      POSTGRES_PASSWORD: storeadmin
+      POSTGRES_DB: storedb
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
+    name: postgres_data
